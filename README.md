@@ -1,5 +1,7 @@
 # Python training examples for SCtrain course
 
+    git clone https :// github . com/ kosl /python - training .git
+
 On Karolina cluster use ./jupyter-lab.sh to start the 
 notebook on a compute node and then use ssh port forwarding
 on a local machine to the link printed out by the jupyter-lab.
