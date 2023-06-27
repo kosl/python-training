@@ -1,0 +1,7 @@
+#!/bin/bash -x
+#PBS -A DD-23-22 -qqexp -lselect=1,walltime=01:00:00
+#id=$(id -u)
+#port=$((8700 + ${id} % 200))
+port=$1
+ssh -TN -f login1.karolina -R ${port}:localhost:${port}
+/apps/all/Anaconda3/2022.05/bin/jupyter-lab --port ${port}
