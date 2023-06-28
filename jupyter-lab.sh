@@ -13,4 +13,4 @@ port=$(free_port_scanner)
 echo "Please forward SSH localy with -L ${port}:localhost:${port} while qsub is starting jupyter-lab on a compute node"
 echo "Press the following key sequence: <Enter>~C to get ssh> prompt and then type -L ${port}:localhost:${port}<Enter>"
 dir=$(cd ${0%/*} && pwd)
-qsub -A DD-23-22 -q R1944129 -lselect=1,walltime=08:00:00 -I -- ${dir}/jupyter-lab.qsub ${port}
+qsub -A DD-23-22 -q R1944129 -lselect=1:ncpus=128,walltime=08:00:00 -I -- ${dir}/jupyter-lab.qsub ${port}
